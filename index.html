@@ -5,8 +5,8 @@
   <title>Tolibjon | Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link
@@ -16,12 +16,17 @@
 
   <style>
     :root {
-      --bg-main: radial-gradient(circle at top left, #1e293b, #0f172a 60%);
-      --card-bg: rgba(255,255,255,0.035);
+      --bg1: #0b0f19;
+      --bg2: #111827;
+      --bg3: #0f172a;
+
+      --glass: rgba(255,255,255,0.03);
       --border: rgba(255,255,255,0.08);
-      --text: #e2e8f0;
+
+      --text-main: #e5e7eb;
       --text-muted: #94a3b8;
-      --hover-bg: rgba(255,255,255,0.05);
+
+      --hover: rgba(255,255,255,0.05);
     }
 
     * {
@@ -32,120 +37,133 @@
     }
 
     body {
-      background: var(--bg-main);
       min-height: 100vh;
+      background: radial-gradient(circle at top left, var(--bg3), var(--bg2), var(--bg1));
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 20px;
-      color: var(--text);
+      align-items: center;
+      padding: 24px;
+      color: var(--text-main);
     }
 
     .card {
       width: 100%;
-      max-width: 460px;
-      background: var(--card-bg);
-      border-radius: 24px;
-      padding: 26px 22px;
+      max-width: 480px;
+      background: var(--glass);
       border: 1px solid var(--border);
       backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 0 32px rgba(0,0,0,0.45);
     }
 
-    .header {
+    /* Header section */
+    .top {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .avatar {
       width: 62px;
       height: 62px;
       border-radius: 50%;
-      background: #334155;
+      background: #1e293b;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-size: 1.2rem;
+      justify-content: center;
+      font-size: 1.1rem;
       font-weight: 600;
       color: #f1f5f9;
     }
 
     .name {
-      font-size: 1.3rem;
+      font-size: 1.32rem;
       font-weight: 600;
     }
 
     .role {
-      color: var(--text-muted);
       font-size: .9rem;
+      color: var(--text-muted);
+      margin-top: 2px;
     }
 
+    /* Bio */
     .bio {
-      margin: 12px 0 22px;
       font-size: 0.92rem;
-      color: #cbd5e1;
+      color: #cdd2db;
       line-height: 1.55;
+      margin-top: 10px;
+      margin-bottom: 22px;
     }
 
     .section-title {
       font-size: 0.8rem;
-      letter-spacing: 0.1em;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
     }
 
+    /* Link buttons */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .link-btn {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 13px;
-      border-radius: 16px;
+      padding: 12px 14px;
       background: rgba(255,255,255,0.035);
+      border-radius: 16px;
       border: 1px solid var(--border);
       text-decoration: none;
-      color: var(--text);
+      color: var(--text-main);
       transition: 0.15s ease;
     }
 
     .link-btn:hover {
-      background: var(--hover-bg);
+      background: var(--hover);
       transform: translateY(-2px);
-      border-color: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.16);
     }
 
-    .link-main {
+    .link-left {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .link-icon {
+    .icon {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.06);
     }
 
-    .subtext {
+    .sub {
       font-size: 0.75rem;
       color: var(--text-muted);
     }
 
-    .footer {
-      margin-top: 22px;
-      font-size: 0.75rem;
+    /* Official platform colors */
+    .tg    { color: #229ED9; }
+    .ig    { background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); color: white; }
+    .wc    { color: #09b83e; }
+    .gh    { color: white; }
+    .li    { color: #0A66C2; }
+
+    footer {
+      margin-top: 24px;
       color: #64748b;
+      font-size: 0.75rem;
       text-align: center;
     }
   </style>
@@ -154,7 +172,7 @@
 
   <div class="card">
 
-    <div class="header">
+    <div class="top">
       <div class="avatar">TB</div>
       <div>
         <div class="name">Tolibjon Boydullayev</div>
@@ -171,56 +189,61 @@
 
     <div class="links">
 
+      <!-- Telegram -->
       <a href="https://t.me/B_tolibjon" class="link-btn" target="_blank">
-        <div class="link-main">
-          <div class="link-icon"><i class="fa-brands fa-telegram"></i></div>
+        <div class="link-left">
+          <div class="icon tg"><i class="fa-brands fa-telegram"></i></div>
           <div>
             Telegram
-            <div class="subtext">@B_tolibjon</div>
+            <div class="sub">@B_tolibjon</div>
           </div>
         </div>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
 
+      <!-- Instagram -->
       <a href="https://instagram.com/tolibjon_2712" class="link-btn" target="_blank">
-        <div class="link-main">
-          <div class="link-icon"><i class="fa-brands fa-instagram"></i></div>
+        <div class="link-left">
+          <div class="icon ig"><i class="fa-brands fa-instagram"></i></div>
           <div>
             Instagram
-            <div class="subtext">@tolibjon_2712</div>
+            <div class="sub">@tolibjon_2712</div>
           </div>
         </div>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
 
+      <!-- WeChat -->
       <a href="wechatqr.png" class="link-btn" target="_blank">
-        <div class="link-main">
-          <div class="link-icon"><i class="fa-brands fa-weixin"></i></div>
+        <div class="link-left">
+          <div class="icon wc"><i class="fa-brands fa-weixin"></i></div>
           <div>
             WeChat
-            <div class="subtext">ID: B_tolibjon • Open QR</div>
+            <div class="sub">ID: B_tolibjon • Open QR</div>
           </div>
         </div>
         <i class="fa-solid fa-qrcode"></i>
       </a>
 
+      <!-- GitHub -->
       <a href="https://github.com/tolibjon2712" class="link-btn" target="_blank">
-        <div class="link-main">
-          <div class="link-icon"><i class="fa-brands fa-github"></i></div>
+        <div class="link-left">
+          <div class="icon gh"><i class="fa-brands fa-github"></i></div>
           <div>
             GitHub
-            <div class="subtext">github.com/tolibjon2712</div>
+            <div class="sub">github.com/tolibjon2712</div>
           </div>
         </div>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
       </a>
 
+      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/tolibjon2712" class="link-btn" target="_blank">
-        <div class="link-main">
-          <div class="link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+        <div class="link-left">
+          <div class="icon li"><i class="fa-brands fa-linkedin-in"></i></div>
           <div>
             LinkedIn
-            <div class="subtext">in/tolibjon2712</div>
+            <div class="sub">in/tolibjon2712</div>
           </div>
         </div>
         <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -228,9 +251,9 @@
 
     </div>
 
-    <div class="footer">
+    <footer>
       © <span id="year"></span> Tolibjon Boydullayev · Built on GitHub Pages
-    </div>
+    </footer>
 
   </div>
 
