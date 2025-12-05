@@ -2,172 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tolibjon | Social Links</title>
+  <title>Tolibjon | Links</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (icons) -->
+  <!-- Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    referrerpolicy="no-referrer"
   />
 
   <style>
     :root {
-      --bg-main: radial-gradient(circle at top left, #1d4ed8, #020617 45%, #000000);
-      --glass-bg: rgba(15, 23, 42, 0.82);
-      --glass-border: rgba(148, 163, 184, 0.35);
-      --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.12);
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
+      --bg-main: linear-gradient(140deg, #0f172a, #1e293b);
+      --card-bg: rgba(255,255,255,0.03);
+      --border: rgba(255,255,255,0.1);
+      --text: #e5e7eb;
+      --text-muted: #94a3b8;
+      --hover-bg: rgba(255,255,255,0.06);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", sans-serif;
     }
 
     body {
-      min-height: 100vh;
       background: var(--bg-main);
-      color: var(--text-main);
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      overflow-x: hidden;
-    }
-
-    /* Background glow circles */
-    .bg-circle {
-      position: fixed;
-      border-radius: 999px;
-      filter: blur(60px);
-      opacity: 0.65;
-      z-index: -1;
-    }
-    .bg-circle.one {
-      width: 260px;
-      height: 260px;
-      background: rgba(56, 189, 248, 0.55);
-      top: -60px;
-      right: -40px;
-    }
-    .bg-circle.two {
-      width: 230px;
-      height: 230px;
-      background: rgba(129, 140, 248, 0.7);
-      bottom: -70px;
-      left: -40px;
+      color: var(--text);
     }
 
     .card {
       width: 100%;
-      max-width: 480px;
-      background: var(--glass-bg);
-      border-radius: 26px;
-      padding: 26px 22px 22px;
-      border: 1px solid var(--glass-border);
-      box-shadow:
-        0 22px 60px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(18px);
-      animation: fadeUp 0.7s ease-out;
+      max-width: 460px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 26px 22px;
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
     }
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px) scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .top-row {
+    .header {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .avatar {
-      flex-shrink: 0;
-      width: 64px;
-      height: 64px;
-      border-radius: 999px;
-      background: conic-gradient(from 190deg, #22d3ee, #6366f1, #ec4899, #22d3ee);
-      padding: 2px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #334155;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .avatar-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      background: #020617;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: 0.06em;
-      color: #e5e7eb;
-    }
-
-    .heading {
-      flex: 1;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f1f5f9;
     }
 
     .name {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin-bottom: 4px;
     }
 
     .role {
-      font-size: 0.86rem;
       color: var(--text-muted);
+      font-size: .9rem;
     }
 
     .bio {
-      margin-top: 12px;
-      font-size: 0.9rem;
-      color: #d1d5db;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 18px;
-    }
-
-    .badge {
-      font-size: 0.72rem;
-      padding: 5px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.6);
-      color: #cbd5f5;
+      margin: 12px 0 22px;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.55;
     }
 
     .section-title {
       font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.1em;
       color: var(--text-muted);
       margin-bottom: 10px;
     }
@@ -180,254 +103,135 @@
 
     .link-btn {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      text-decoration: none;
-      padding: 11px 13px;
+      align-items: center;
+      padding: 12px 13px;
       border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
-      transition:
-        transform 0.12s ease-out,
-        box-shadow 0.12s ease-out,
-        border-color 0.12s ease-out,
-        background 0.12s ease-out;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.15s ease;
     }
 
-    .link-btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 0 0, var(--accent-soft), transparent 55%);
-      opacity: 0;
-      transition: opacity 0.12s ease-out;
+    .link-btn:hover {
+      background: var(--hover-bg);
+      transform: translateY(-2px);
     }
 
     .link-main {
       display: flex;
       align-items: center;
       gap: 10px;
-      position: relative;
-      z-index: 1;
     }
 
     .link-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
     }
 
-    .link-text-primary {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .link-text-secondary {
+    .subtext {
       font-size: 0.75rem;
       color: var(--text-muted);
     }
 
-    .link-arrow {
-      font-size: 0.9rem;
-      opacity: 0.7;
-      position: relative;
-      z-index: 1;
-    }
-
-    .link-btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(248, 250, 252, 0.7);
-      background: rgba(15, 23, 42, 1);
-      box-shadow:
-        0 18px 40px rgba(15, 23, 42, 0.95),
-        0 0 0 1px rgba(15, 23, 42, 0.9);
-    }
-
-    .link-btn:hover::before {
-      opacity: 1;
-    }
-
-    .link-btn:hover .link-arrow {
-      transform: translateX(2px);
-      opacity: 1;
-    }
-
     .footer {
-      margin-top: 18px;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .footer span {
-      opacity: 0.9;
-    }
-
-    /* Individual platform colors (subtle) */
-    .tg-icon { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-    .ig-icon { background: radial-gradient(circle at 30% 30%, #f97316, #ec4899 55%, #6366f1); color: #fef3c7; }
-    .wc-icon { background: rgba(34, 197, 94, 0.16); color: #4ade80; }
-    .gh-icon { background: rgba(15, 23, 42, 0.9); color: #e5e7eb; border: 1px solid rgba(148, 163, 184, 0.7); }
-    .li-icon { background: rgba(37, 99, 235, 0.2); color: #60a5fa; }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 22px 18px 18px;
-      }
-      .name {
-        font-size: 1.15rem;
-      }
-      .bio {
-        font-size: 0.86rem;
-      }
+      margin-top: 22px;
+      font-size: 0.75rem;
+      color: #64748b;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <!-- background glows -->
-  <div class="bg-circle one"></div>
-  <div class="bg-circle two"></div>
+  <div class="card">
 
-  <main class="card">
-    <section class="top-row">
-      <div class="avatar">
-        <div class="avatar-inner">TB</div>
-      </div>
-      <div class="heading">
+    <div class="header">
+      <div class="avatar">TB</div>
+      <div>
         <div class="name">Tolibjon Boydullayev</div>
-        <div class="role">Machine Vision & Web Developer</div>
+        <div class="role">Machine Vision & Python Developer</div>
       </div>
-    </section>
+    </div>
 
     <p class="bio">
-      Simplifying digital life with smart tools, clean code and practical engineering.
+      Simplifying digital life with smart tools, clean code and practical engineering. 
       Connect with me through any of the platforms below.
     </p>
 
-    <div class="badge-row">
-      <div class="badge">Cotton picker monitoring</div>
-      <div class="badge">Python & Machine Vision</div>
-      <div class="badge">Web development</div>
+    <div class="section-title">SOCIAL LINKS</div>
+
+    <div class="links">
+
+      <a href="https://t.me/B_tolibjon" class="link-btn" target="_blank">
+        <div class="link-main">
+          <div class="link-icon"><i class="fa-brands fa-telegram"></i></div>
+          <div>
+            Telegram
+            <div class="subtext">@B_tolibjon</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a href="https://instagram.com/tolibjon_2712" class="link-btn" target="_blank">
+        <div class="link-main">
+          <div class="link-icon"><i class="fa-brands fa-instagram"></i></div>
+          <div>
+            Instagram
+            <div class="subtext">@tolibjon_2712</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a href="wechatqr.png" class="link-btn" target="_blank">
+        <div class="link-main">
+          <div class="link-icon"><i class="fa-brands fa-weixin"></i></div>
+          <div>
+            WeChat
+            <div class="subtext">ID: B_tolibjon • Open QR</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-qrcode"></i>
+      </a>
+
+      <a href="https://github.com/tolibjon2712" class="link-btn" target="_blank">
+        <div class="link-main">
+          <div class="link-icon"><i class="fa-brands fa-github"></i></div>
+          <div>
+            GitHub
+            <div class="subtext">github.com/tolibjon2712</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/tolibjon2712" class="link-btn" target="_blank">
+        <div class="link-main">
+          <div class="link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div>
+            LinkedIn
+            <div class="subtext">in/tolibjon2712</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
     </div>
 
-    <div class="section-title">Social links</div>
+    <div class="footer">
+      © <span id="year"></span> Tolibjon Boydullayev · Built on GitHub Pages
+    </div>
 
-    <section class="links">
-
-      <!-- Telegram -->
-      <a
-        href="https://t.me/B_tolibjon"
-        class="link-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="link-main">
-          <div class="link-icon tg-icon">
-            <i class="fa-brands fa-telegram"></i>
-          </div>
-          <div>
-            <div class="link-text-primary">Telegram</div>
-            <div class="link-text-secondary">@B_tolibjon</div>
-          </div>
-        </div>
-        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <!-- Instagram -->
-      <a
-        href="https://instagram.com/tolibjon_2712"
-        class="link-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="link-main">
-          <div class="link-icon ig-icon">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-          <div>
-            <div class="link-text-primary">Instagram</div>
-            <div class="link-text-secondary">@tolibjon_2712</div>
-          </div>
-        </div>
-        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <!-- WeChat (QR image link) -->
-      <a
-        href="wechatqr.png"
-        class="link-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="link-main">
-          <div class="link-icon wc-icon">
-            <i class="fa-brands fa-weixin"></i>
-          </div>
-          <div>
-            <div class="link-text-primary">WeChat</div>
-            <div class="link-text-secondary">ID: B_tolibjon • Open QR</div>
-          </div>
-        </div>
-        <div class="link-arrow"><i class="fa-solid fa-qrcode"></i></div>
-      </a>
-
-      <!-- GitHub -->
-      <a
-        href="https://github.com/tolibjon2712"
-        class="link-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="link-main">
-          <div class="link-icon gh-icon">
-            <i class="fa-brands fa-github"></i>
-          </div>
-          <div>
-            <div class="link-text-primary">GitHub</div>
-            <div class="link-text-secondary">github.com/tolibjon2712</div>
-          </div>
-        </div>
-        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <!-- LinkedIn -->
-      <a
-        href="https://www.linkedin.com/in/tolibjon2712"
-        class="link-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div class="link-main">
-          <div class="link-icon li-icon">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </div>
-          <div>
-            <div class="link-text-primary">LinkedIn</div>
-            <div class="link-text-secondary">in/tolibjon2712</div>
-          </div>
-        </div>
-        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-    </section>
-
-    <footer class="footer">
-      <span>© <span id="year"></span> Tolibjon Boydullayev</span>
-      <span>Built on GitHub Pages</span>
-    </footer>
-  </main>
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
